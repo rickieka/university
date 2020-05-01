@@ -1,26 +1,15 @@
-before_script:
-  - git submodule update --init learning/university
-
 test-university:
   stage: test
   image: openjdk:11.0.7-jdk
   script:
-    - cd learning/university
     - ./gradlew clean test
-  only:
-    changes:
-      - learning/university/*
 
 detekt-university:
   stage: report
   image: openjdk:11.0.7-jdk
   script:
-    - cd learning/university
     - ./gradlew detektTest
   artifacts:
     paths:
       - learning/university/build/reports/detekt/
     expire_in: 1 week
-  only:
-    changes:
-      - learning/university/*
