@@ -1,3 +1,6 @@
+before_script:
+  - git submodule update --init learning/university
+
 test-university:
   stage: test
   image: openjdk:11.0.7-jdk
