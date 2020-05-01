@@ -1,5 +1,5 @@
 buildscript {
-    apply from: '../../libs/kotlin/dep/latest/base.gradle.kts'
+    apply from: 'libs/kotlin/dep/latest/base.gradle.kts'
 
     repositories {
         mavenCentral()
@@ -46,5 +46,5 @@ test {
 detekt {
         toolVersion = "$detektVersion"
         input = files("src/main/kotlin")
-        config = files("../../libs/kotlin/plugins/config/detekt/detekt.yml")
-    }
+        config = files("libs/kotlin/plugins/config/detekt/detekt.yml")
+}
